@@ -1,0 +1,90 @@
+@import 'bourbon';
+@import 'neat';
+@import "../libs/lumx/dist/scss/lumx";
+
+@font-face {
+    font-family: 'lane';
+    src: url('../fonts/LANENAR_.ttf');
+}
+
+@font-face {
+    font-family: 'honey';
+    src: url('../fonts/HoneyScript-Light.ttf');
+}
+
+html {
+	background-color: #333333;
+}
+
+header {
+	min-height: 350px;
+	@media (max-width: 700px){
+		overflow: auto;
+	}
+	@media (max-width: 440px){
+		min-height: 250px;
+	}
+	background-image: url(../img/bg1.png);
+	border-bottom: solid 2px #737373;
+	-webkit-box-shadow: 0 5px 25px 7px #0A0A0A;
+	box-shadow: 0 5px 25px 7px #0A0A0A;
+}
+
+.header-content {
+	padding-top: 2em;
+}
+
+#indian, #mottos {
+	display: inline-block;
+}
+
+#indian {
+	@media (max-width: 700px){
+		display: none;
+	}
+}
+
+#mottos {
+	vertical-align: top;
+	padding-top: 1.5em;
+	@media (max-width: 440px){
+		display: none;
+	}
+}
+
+#header-text {
+	font-family: 'lane', arial;
+	color: white;
+	@include span-columns(6);
+	@include shift(3);
+	@media (max-width: 1265px){
+		@include span-columns(8);
+		@include shift(2);
+	}
+	@media (max-width: 955px){
+		@include span-columns(11);
+		@include shift(1);
+	}
+}
+
+#header-director {
+	margin-left: 20em;
+	@media (max-width: 700px){
+		margin-left: 0;
+	}
+}
+
+.motto {
+	font-family: 'honey';
+	font-size: 2.5em;
+	display: block;
+	&:nth-of-type(2){
+		margin-left: 2em;
+	}
+	&:nth-of-type(3){
+		margin-left: 4em;
+	}
+	&:nth-of-type(4){
+		margin-left: 6em;
+	}
+}

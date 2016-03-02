@@ -17,6 +17,7 @@
   ],
   "devDependencies": {
     "lumx": "^0.3.96",
-    "angular-route": "^1.5.0"
+    "angular-route": "^1.5.0",
+    "neat": "^1.7.3"
   }
 }
