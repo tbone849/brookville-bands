@@ -14,7 +14,10 @@
 
 html {
 	background-color: #333333;
+	font-family: 'lane', arial;
 }
+
+// header styles
 
 header {
 	min-height: 350px;
@@ -47,24 +50,36 @@ header {
 #mottos {
 	vertical-align: top;
 	padding-top: 1.5em;
+	@media (max-width: 700px){
+		margin-left: 10em;
+	}
+	@media (max-width: 684px){
+		margin-left: 3em;
+	}
+	@media (max-width: 500px){
+		margin-left: 0;
+	}
 	@media (max-width: 440px){
 		display: none;
 	}
 }
 
 #header-text {
-	font-family: 'lane', arial;
 	color: white;
-	@include span-columns(6);
-	@include shift(3.5);
-	@media (max-width: 1265px){
-		@include span-columns(8);
-		@include shift(2);
+	width: 40%;
+	@media (max-width: 1540px){
+		width: 50%;
 	}
-	@media (max-width: 955px){
-		@include span-columns(11);
-		@include shift(1);
+	@media (max-width: 1235px){
+		width: 60%;
 	}
+	@media (max-width: 1030px){
+		width: 75%;
+	}
+	@media (max-width: 824px){
+		width: 90%;
+	}
+	margin: auto;
 }
 
 #header-director {
@@ -91,4 +106,27 @@ header {
 	&:nth-of-type(4){
 		margin-left: 6em;
 	}
+}
+
+// view styles
+
+.view-container {
+	min-height: calc(100vh - 400px);
+}
+
+// footer styles 
+
+footer {
+	height: 50px;
+	
+	text-align: center;
+	color: white;
+}
+
+a {
+	&:link, &:visited, &:hover, &:active {
+		color: $light-blue-600;
+		text-decoration: none;
+	}
+
 }
