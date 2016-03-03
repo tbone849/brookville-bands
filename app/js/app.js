@@ -3,7 +3,8 @@ angular.module('myApp', ['lumx', 'ngRoute'])
 		$routeProvider.when('/', {
             templateUrl : 'views/home.html'
         }).when('/bands/:band', {
-            templateUrl : 'views/band.html'
+            templateUrl : 'views/band.html',
+            controller : 'bandsController'
         }).when('/calendar', {
             templateUrl : 'views/calendar.html'
         }).when('/media', {

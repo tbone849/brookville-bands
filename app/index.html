@@ -14,7 +14,7 @@
 	<script src="./assets/libs/angular-route/angular-route.js"></script>
 	<script src="js/app.js"></script>
 </head>
-<body>
+<body ng-controller='mainController'>
 	<header>
 		<div class='header-content'>
 			<div id='header-text'>
@@ -32,25 +32,48 @@
 		</div>
 	</header>
 	 <nav>
-        <button class="btn btn--m btn--flat" lx-ripple='amber-900'>Home</button>
+        <button 
+        	class="btn btn--m btn--flat" 
+        	lx-ripple='amber-900'
+        	ng-click='navigateTo("/")'>Home</button>
         <lx-dropdown>
         	<lx-dropdown-toggle>
-        	    <button class="btn btn--m btn--flat" lx-ripple='amber-900'>Bands</button>
+        	    <button 
+        	    	class="btn btn--m btn--flat" 
+        	    	lx-ripple='amber-900'>Bands</button>
         	</lx-dropdown-toggle>
         	<lx-dropdown-menu>
         	    <ul>
-        	        <li><a class="dropdown-link">Jr. High</a></li>
-        	        <li><a class="dropdown-link">Sr. High</a></li>
-        	        <li><a class="dropdown-link">Marching Band</a></li>
+        	        <li><a href='#/bands/jr_high' class="dropdown-link">Jr. High</a></li>
+        	        <li><a href='#/bands/sr_high' class="dropdown-link">Sr. High</a></li>
+        	        <li><a href='#/bands/marching_band' class="dropdown-link">Marching Band</a></li>
         	    </ul>
         	</lx-dropdown-menu>
     	</lx-dropdown>
-       <button class="btn btn--m btn--flat" lx-ripple='amber-900'>Calendar</button>
-       <button class="btn btn--m btn--flat" lx-ripple='amber-900'>Media</button>
-       <button class="btn btn--m btn--flat" lx-ripple='amber-900'>Boosters</button>
-       <button class="btn btn--m btn--flat" lx-ripple='amber-900'>Fundraiser</button>
-       <button class="btn btn--m btn--flat" lx-ripple='amber-900'>Director</button>
-       <button class="btn btn--m btn--flat" lx-ripple='amber-900'>Contact</button>
+       <button 
+       		class="btn btn--m btn--flat" 
+       		lx-ripple='amber-900'
+       		ng-click='navigateTo("/calendar")'>Calendar</button>
+       <button 
+       		class="btn btn--m btn--flat" 
+       		lx-ripple='amber-900'
+       		ng-click='navigateTo("/media")'>Media</button>
+       <button 
+       		class="btn btn--m btn--flat" 
+       		lx-ripple='amber-900'
+       		ng-click='navigateTo("/boosters")'>Boosters</button>
+       <button 
+       		class="btn btn--m btn--flat" 
+       		lx-ripple='amber-900'
+       		ng-click='navigateTo("/fundraiser")'>Fundraiser</button>
+       <button 
+       		class="btn btn--m btn--flat" 
+       		lx-ripple='amber-900'
+       		ng-click='navigateTo("/director")'>Director</button>
+       <button 
+       		class="btn btn--m btn--flat" 
+       		lx-ripple='amber-900'
+       		ng-click='navigateTo("/contact")'>Contact</button>
     </nav>
 	<div class="view-container card" ng-view>
     </div>
