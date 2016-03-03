@@ -14,7 +14,6 @@
 
 html {
 	background-color: #333333;
-	font-family: 'lane', arial;
 }
 
 // header styles
@@ -29,8 +28,6 @@ header {
 	}
 	background-image: url(../img/bg1.png);
 	border-bottom: solid 2px #737373;
-	-webkit-box-shadow: 0 5px 25px 7px #0A0A0A;
-	box-shadow: 0 5px 25px 7px #0A0A0A;
 }
 
 .header-content {
@@ -66,6 +63,7 @@ header {
 
 #header-text {
 	color: white;
+	font-family: 'lane', arial;
 	width: 40%;
 	@media (max-width: 1540px){
 		width: 50%;
@@ -118,7 +116,7 @@ header {
 
 footer {
 	height: 50px;
-	
+	font-family: 'lane', arial;
 	text-align: center;
 	color: white;
 }
@@ -129,4 +127,20 @@ a {
 		text-decoration: none;
 	}
 
+}
+
+// nav styles 
+
+nav {
+	background-color: $amber-200;
+	text-align: center;
+	-webkit-box-shadow: 0 5px 25px 7px #0A0A0A;
+	box-shadow: 0 5px 25px 7px #0A0A0A;
+	.btn:hover {
+		background-color: $amber-300;
+	}
+}
+
+.nav-dropdown {
+	margin-top: -2em;
 }

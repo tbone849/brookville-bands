@@ -31,11 +31,32 @@
 			</div>
 		</div>
 	</header>
+	 <nav>
+        <button class="btn btn--m btn--flat" lx-ripple='amber-900'>Home</button>
+        <lx-dropdown>
+        	<lx-dropdown-toggle>
+        	    <button class="btn btn--m btn--flat" lx-ripple='amber-900'>Bands</button>
+        	</lx-dropdown-toggle>
+        	<lx-dropdown-menu>
+        	    <ul>
+        	        <li><a class="dropdown-link">Jr. High</a></li>
+        	        <li><a class="dropdown-link">Sr. High</a></li>
+        	        <li><a class="dropdown-link">Marching Band</a></li>
+        	    </ul>
+        	</lx-dropdown-menu>
+    	</lx-dropdown>
+       <button class="btn btn--m btn--flat" lx-ripple='amber-900'>Calendar</button>
+       <button class="btn btn--m btn--flat" lx-ripple='amber-900'>Media</button>
+       <button class="btn btn--m btn--flat" lx-ripple='amber-900'>Boosters</button>
+       <button class="btn btn--m btn--flat" lx-ripple='amber-900'>Fundraiser</button>
+       <button class="btn btn--m btn--flat" lx-ripple='amber-900'>Director</button>
+       <button class="btn btn--m btn--flat" lx-ripple='amber-900'>Contact</button>
+    </nav>
 	<div class="view-container" ng-view>
     </div>
     <footer>
     	<div class='copyright'>
-    		<b>DESIGNED AND DEVELOPED BY <a href="https://sarvey-webdev.com">TIM SARVEY</a> &copy;<script>document.write(new Date().getFullYear());
+    		<b>DESIGNED AND DEVELOPED BY <a href="https://sarvey-webdev.com">TIM SARVEY</a> &#169;<script>document.write(new Date().getFullYear());
 			</script></b>
     	</div>
     </footer>
