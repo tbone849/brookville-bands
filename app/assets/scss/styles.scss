@@ -2,6 +2,8 @@
 @import 'neat';
 @import "../libs/lumx/dist/scss/lumx";
 
+$brkv-blue: #0172b3;
+
 @font-face {
     font-family: 'lane';
     src: url('../fonts/LANENAR_.ttf');
@@ -109,7 +111,7 @@ header {
 // view styles
 
 .view-container {
-	min-height: calc(100vh - 400px);
+	min-height: calc(100vh - 500px);
 }
 
 // footer styles 
@@ -119,6 +121,10 @@ footer {
 	font-family: 'lane', arial;
 	text-align: center;
 	color: white;
+}
+
+.copyright {
+	padding: 1em 0;
 }
 
 a {
@@ -139,8 +145,46 @@ nav {
 	.btn:hover {
 		background-color: $amber-300;
 	}
+	margin-bottom: 50px;
 }
 
 .nav-dropdown {
 	margin-top: -2em;
+}
+
+// main content 
+
+.view-container {
+	width: 80%;
+	max-width: 1200px;
+	margin: 0 auto;
+	overflow: visible;
+	-webkit-box-shadow: 3px 3px 10px 0 #0A0A0A;
+	box-shadow: 3px 3px 10px 0 #0A0A0A;
+}
+
+// ribbon courtesy of http://codepen.io/pavelsuraba/pen/AyrfI
+.ribbon {
+	font-family: 'lane', arial;
+    position: relative;
+    top: 30px;
+    margin-left: -20px;
+    padding: 10px;
+    display: inline-block;
+    min-width: 250px;
+    clear: both;
+    background: $amber-200;
+    text-indent: 40px;
+    box-shadow: 1px 1px 2px #000;
+    
+    &:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      left: 0;
+      top: 101%;
+      border-right: 19px solid grey;
+      border-bottom: 10px solid transparent;
+	}
 }
