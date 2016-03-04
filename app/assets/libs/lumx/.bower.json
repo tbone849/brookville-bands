@@ -58,7 +58,6 @@
     "commit": "4de74fb8c88f382445f7adc8fd51d279f79c87b1"
   },
   "_source": "git://github.com/lumapps/lumX.git",
-  "_target": "^0.3.96",
-  "_originalSource": "lumx",
-  "_direct": true
+  "_target": "*",
+  "_originalSource": "lumx"
 }

@@ -114,6 +114,35 @@ header {
 	min-height: calc(100vh - 500px);
 }
 
+.content {
+	padding: 60px 30px 30px;
+}
+
+// twitter styles
+
+.twitter-container {
+	width: 282px;
+	padding: 10px;
+	margin-top: 2em;
+	background-color: $brkv-blue;
+}
+
+.twitter-title, .twitter-bottom {
+	color: white;
+	font-family: 'lane';
+	font-size: 1.5em;
+	font-weight: normal;
+}
+
+.twitter-title {
+	padding-bottom: 10px;
+}
+
+.twitter-bottom {
+	padding-top: 10px;
+	text-align: right;
+}
+
 // footer styles 
 
 footer {
