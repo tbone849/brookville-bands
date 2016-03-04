@@ -193,7 +193,7 @@ nav {
 // view styles
 
 .view-container {
-	min-height: calc(100vh - 500px);
+	min-height: 500px;
 	width: 80%;
 	@media (max-width: 600px){
 		width: 100%;
@@ -201,7 +201,7 @@ nav {
 	max-width: 1200px;
 	margin: 0 auto;
 	overflow: visible;
-	background-image: url(../img/marching_band.png);
+	background-image: url(../img/trumpet.png);
 	background-repeat: no-repeat;
 	background-position: bottom right;
 	@media (max-width: 750px){
@@ -213,6 +213,20 @@ nav {
 
 .content {
 	padding: 60px 30px 30px;
+	p {
+		margin-bottom: 1em;
+	}
+}
+
+.band-pic {
+	float: left;
+	border-radius: 50%;
+	margin-right: 2em;
+	margin-bottom: 2em;
+	@media (max-width: 850px){
+		margin: 0 auto 2em;
+		float: none;
+	}
 }
 
 // ribbon courtesy of http://codepen.io/pavelsuraba/pen/AyrfI
