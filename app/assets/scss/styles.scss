@@ -229,6 +229,46 @@ nav {
 	}
 }
 
+.booster-container {
+	width: 250px;
+	margin: 0 auto;
+}
+
+.spacy-divider {
+	margin-bottom: 1em;
+}
+
+.fundraiser, .docs {
+	display: inline-block;
+	width: 250px;
+	margin-bottom: 1em;
+	margin-right: 2em;
+	vertical-align: top;
+}
+
+.director-pic {
+	border-radius: 50%;
+	float: left;
+	margin-right: 1em;
+}
+
+.director-contact {
+	margin-bottom: 2em;
+	font-weight: bold;
+	span {
+		display: block;
+	}
+}
+
+.contact {
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+.contact-paragraph span {
+	display: block;
+}
+
 // ribbon courtesy of http://codepen.io/pavelsuraba/pen/AyrfI
 .ribbon {
 	font-family: 'lane', arial;

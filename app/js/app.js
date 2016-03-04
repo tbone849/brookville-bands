@@ -16,6 +16,7 @@ angular.module('myApp', ['lumx', 'ngRoute'])
         }).when('/director', {
             templateUrl : 'views/director.html'
         }).when('/fundraiser', {
-            templateUrl : 'views/fundraiser.html'
+            templateUrl : 'views/fundraiser.html',
+            controller : 'fundraiserController'
         });
 	}]);

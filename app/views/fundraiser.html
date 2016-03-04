@@ -1,3 +1,22 @@
 <div class='ribbon'>
 	<h2>Fundraiser</h2>
 </div>
+<div class='content'>
+	<div class='fundraiser-container' ng-repeat='fundraiser in fundraisers'>
+		<div class='fundraiser'>
+			<span class="fs-title display-block mb">{{fundraiser.name}}</span>
+			<div class="divider divider--dark spacy-divider"></div>
+			<div class='fundraiser-item' ng-repeat='detail in fundraiser.details'>
+				<span class="display-block">{{detail.item}}</span>
+				<span class="display-block fs-body-1 tc-black-2">{{detail.subitem}}</span>
+			</div>
+		</div>
+		<div class='docs'>
+			<span class="fs-title display-block mb docs-title">Extra Forms</span>
+			<div class="divider divider--dark spacy-divider"></div>
+			<div ng-repeat='doc in fundraiser.docs'>
+				<a class='display-block' ng-href='{{doc.url}}'>{{doc.name}}</a>
+				<span class='display-block fs-body-1 tc-black-2'>{{doc.about}}</span>
+			</div>
+		</div>
+</div>
