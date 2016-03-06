@@ -34,6 +34,7 @@ header {
 
 .header-content {
 	padding-top: 2em;
+	padding-bottom: 1em;
 }
 
 #indian, #mottos {
@@ -175,7 +176,6 @@ a {
 
 nav {
 	background-color: $amber-200;
-	text-align: center;
 	-webkit-box-shadow: 0 5px 25px 7px #0A0A0A;
 	box-shadow: 0 5px 25px 7px #0A0A0A;
 	.btn:hover {
@@ -186,6 +186,21 @@ nav {
 
 .nav-dropdown {
 	margin-top: -2em;
+}
+
+.sandwich-menu {
+	margin-left: 2em;
+	@media (min-width: 800px){
+		display: none;
+	}
+	
+}
+
+.full-nav {
+	text-align: center;
+	@media (max-width: 799px){
+		display: none;
+	}
 }
 
 // main content 

@@ -36,23 +36,68 @@
 		</div>
 	</header>
 	 <nav>
-        <button 
-        	class="btn btn--m btn--flat" 
-        	lx-ripple='amber-900'
-        	ng-click='navigateTo("/")'>Home</button>
-        <lx-dropdown>
-        	<lx-dropdown-toggle>
-        	    <button 
-        	    	class="btn btn--m btn--flat" 
-        	    	lx-ripple='amber-900'>Bands</button>
-        	</lx-dropdown-toggle>
-        	<lx-dropdown-menu>
-        	    <ul>
-        	        <li><a href='#/bands/jr_high' class="dropdown-link">Jr. High</a></li>
-        	        <li><a href='#/bands/sr_high' class="dropdown-link">Sr. High</a></li>
-        	        <li><a href='#/bands/marching_band' class="dropdown-link">Marching Band</a></li>
-        	    </ul>
-        	</lx-dropdown-menu>
+      <!-- tablet and smaller nav -->
+      <lx-dropdown class='sandwich-menu' lx-position="right" lx-over-toggle="true" lx-width="250">
+      <lx-dropdown-toggle>
+          <button class='btn btn--m btn--flat' lx-ripple='amber-900'>
+              <i class="mdi mdi-menu"></i> Menu
+          </button>
+      </lx-dropdown-toggle>
+
+      <lx-dropdown-menu>
+          <ul>
+              <li>
+                <a href='#/' class="dropdown-link">Home</a>
+              </li>
+              <li>
+                <a href='#/bands/jr_high' class="dropdown-link">Jr. High</a>
+              </li>
+              <li>
+                <a href='#/bands/sr_high' class="dropdown-link">Sr. High</a>
+              </li>
+              <li>
+                <a href='#/bands/marching_band' class="dropdown-link">Marching Band</a>
+              </li>
+              <li>
+                <a href='#/bands/jr_high' class="dropdown-link">Calendar</a>
+              </li>
+              <li>
+                <a href='#/bands/sr_high' class="dropdown-link">Media</a>
+              </li>
+              <li>
+                <a href='#/bands/marching_band' class="dropdown-link">Boosters</a>
+              </li>
+              <li>
+                <a href='#/bands/jr_high' class="dropdown-link">Fundraiser</a>
+              </li>
+              <li>
+                <a href='#/bands/sr_high' class="dropdown-link">Director</a>
+              </li>
+              <li>
+                <a href='#/bands/marching_band' class="dropdown-link">Contact</a>
+              </li>
+          </ul>
+      </lx-dropdown-menu>
+    </lx-dropdown>
+    <!-- large screen nav -->
+    <div class='full-nav'>
+      <button 
+      	class="btn btn--m btn--flat" 
+      	lx-ripple='amber-900'
+      	ng-click='navigateTo("/")'>Home</button>
+      <lx-dropdown>
+      	<lx-dropdown-toggle>
+      	    <button 
+      	    	class="btn btn--m btn--flat" 
+      	    	lx-ripple='amber-900'>Bands</button>
+      	</lx-dropdown-toggle>
+      	<lx-dropdown-menu>
+      	    <ul>
+      	        <li><a href='#/bands/jr_high' class="dropdown-link">Jr. High</a></li>
+      	        <li><a href='#/bands/sr_high' class="dropdown-link">Sr. High</a></li>
+      	        <li><a href='#/bands/marching_band' class="dropdown-link">Marching Band</a></li>
+      	    </ul>
+      	</lx-dropdown-menu>
     	</lx-dropdown>
        <button 
        		class="btn btn--m btn--flat" 
@@ -78,6 +123,7 @@
        		class="btn btn--m btn--flat" 
        		lx-ripple='amber-900'
        		ng-click='navigateTo("/contact")'>Contact</button>
+      </div>
     </nav>
 	<div class="view-container card" ng-view>
     </div>
