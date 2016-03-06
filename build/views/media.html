@@ -2,30 +2,42 @@
 	<h2>Media</h2>
 </div>
 <div class='content'>
-
-	<object id="FlashID" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="100%" height="500">
-    <param name="movie" value="mediaGallery.swf" />
-    <param name="quality" value="high" />
-    <param name="wmode" value="transparent" />
-    <param name="swfversion" value="8.0.35.0" />
-    <!-- This param tag prompts users with Flash Player 6.0 r65 and higher to download the latest version of Flash Player. Delete it if you don’t want users to see the prompt. -->
-    <param name="expressinstall" value="Scripts/expressInstall.swf" />
-    <!-- Next object tag is for non-IE browsers. So hide it from IE using IECC. -->
-    <!--[if !IE]>-->
-    <object type="application/x-shockwave-flash" data="mediaGallery.swf" width="100%" height="500">
-      <!--<![endif]-->
-      <param name="quality" value="high" />
-      <param name="wmode" value="transparent" />
-      <param name="swfversion" value="8.0.35.0" />
-      <param name="expressinstall" value="Scripts/expressInstall.swf" />
-      <!-- The browser displays the following alternative content for users with Flash Player 6.0 and older. -->
-      <div>
-        <h4>Content on this page requires a newer version of Adobe Flash Player.</h4>
-        <p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Get Adobe Flash player" width="112" height="33" /></a></p>
-      </div>
-      <!--[if !IE]>-->
-    </object>
-    <!--<![endif]-->
-  </object>
-  
+  <div id="grid" data-directory="./plugin/gallery"></div>
 </div>
+
+<script>
+      $(function(){
+
+            $('#grid').grid({
+                categoriesOrder: 'byName', //byDate, byDateReverse, byName, byNameReverse, random
+                imagesOrder: 'byDate', //byDate, byDateReverse, byName, byNameReverse, random
+                isFitWidth: true, //Nedded to be true if you wish to center the gallery to its container
+                lazyLoad: true, //If you wish to load more images when it reach the bottom of the page
+                showNavBar: true, //Show the navigation bar?
+                smartNavBar: true, //Hide the navigation bar when you don't have categories or just 1
+                imagesToLoadStart: 15, //The number of images to load when it first loads the grid
+                imagesToLoad: 5, //The number of images to load when you click the load more button
+                aleatoryImagesFromCategories: true,//Get few images from each category if not it will get them in order
+                horizontalSpaceBetweenThumbnails: 15, //The space between images horizontally
+                verticalSpaceBetweenThumbnails: 15, //The space between images vertically
+                columnWidth: 'auto', //The width of each columns, if you set it to 'auto' it will use the columns instead
+                columns: 5, //The number of columns when you set columnWidth to 'auto'
+                columnMinWidth: 220, //The minimum width of each columns when you set columnWidth to 'auto'
+                isAnimated: true, //Animation when resizing or filtering with the nav bar
+                caption: true, //Show the caption in mouse over
+                captionCategory: true,//Show the category section of the caption
+                captionType: 'grid', // 'grid', 'grid-fade', 'classic' the type of caption effect
+                lightBox: true, //Do you want the lightbox?
+                lightboxKeyboardNav: true, //Keyboard navigation of the next and prev image
+                lightBoxSpeedFx: 500, //The speed of the lightbox effects
+                lightBoxZoomAnim: true, //Do you want the zoom effect of the images in the lightbox?
+                lightBoxText: true, //If you wish to show the text in the lightbox
+                lightboxPlayBtn: true, //Show the play button?
+                lightBoxAutoPlay: false, //The first time you open the lightbox it start playing the images
+                lightBoxPlayInterval: 4000, //The interval in the auto play mode 
+                lightBoxShowTimer: true, //If you wish to show the timer in auto play mode
+                lightBoxStopPlayOnClose: false, //Stop the auto play mode when you close the lightbox?
+            });
+
+      });
+    </script>
