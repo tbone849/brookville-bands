@@ -1,0 +1,14 @@
+{
+  "name": "Brookville Bands",
+  "description": "Home of the Brookville Jr/Sr High School Bands located in Brookville, PA. This is your one-stop destination for information about ensembles, event dates/times, band boosters, and current/future happenings related to the band program.",
+  "version": "0.0.0.1",
+  "manifest_version": 2,
+  "app": {
+    "urls": [
+      "http://brookvillebands.com/"
+    ],
+    "launch": {
+      "web_url": "http://brookvillebands.com/"
+    }
+  }
+}
