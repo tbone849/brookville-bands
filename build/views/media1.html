@@ -4,7 +4,7 @@
 <div class='content' id='top'>
   <div id="grid" data-directory="./plugin/gallery"></div>
   <div class='back-to-top'>
-    <lx-button lx-color="black" lx-type="flat" ng-click='goToTop()'>
+    <lx-button lx-color="black" lx-type="flat" scroll-to='top'>
         <i class='mdi mdi-arrow-up'></i> Back to Top
     </lx-button>
     </div>
@@ -42,6 +42,16 @@ $('#grid').grid({
     lightBoxPlayInterval: 4000, //The interval in the auto play mode 
     lightBoxShowTimer: true, //If you wish to show the timer in auto play mode
     lightBoxStopPlayOnClose: false, //Stop the auto play mode when you close the lightbox?
+});
+
+$('body').on('click', '.category-navbar li', function(){
+    var $this = $(this);
+    if($this.data('category') != 'all' && $this.attr('data-firsttime') == undefined){
+
+        setTimeout(function(){ $('.grid-loadMore').trigger('click'); }, 300);
+
+        $this.attr('data-firsttime', 'true');
+    }
 });
 
 });

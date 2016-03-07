@@ -309,3 +309,17 @@ nav {
       border-bottom: 10px solid transparent;
 	}
 }
+
+// calendar styles 
+
+.calendar-full {
+	@media (max-width: 799px){
+		display: none;
+	}
+}
+
+.calendar-small {
+	@media (min-width: 800px){
+		display: none;
+	}
+}

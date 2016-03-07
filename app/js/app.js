@@ -1,4 +1,4 @@
-angular.module('myApp', ['lumx', 'ngRoute'])
+angular.module('myApp', ['lumx', 'ngRoute', 'smoothScroll'])
 	.config(['$routeProvider', function($routeProvider){
 		$routeProvider.when('/', {
             templateUrl : 'views/home.html'
@@ -6,17 +6,17 @@ angular.module('myApp', ['lumx', 'ngRoute'])
             templateUrl : 'views/band.html',
             controller : 'bandsController'
         }).when('/calendar', {
-            templateUrl : 'views/calendar.html'
+            templateUrl : 'views/calendar1.html'
         }).when('/media', {
-            templateUrl : 'views/media.html'
+            templateUrl : 'views/media1.html'
         }).when('/boosters', {
-            templateUrl : 'views/boosters.html'
+            templateUrl : 'views/boosters1.html'
         }).when('/contact', {
-            templateUrl : 'views/contact.html'
+            templateUrl : 'views/contact1.html'
         }).when('/director', {
-            templateUrl : 'views/director.html'
+            templateUrl : 'views/director1.html'
         }).when('/fundraiser', {
-            templateUrl : 'views/fundraiser.html',
+            templateUrl : 'views/fundraiser1.html',
             controller : 'fundraiserController'
         });
 	}]);

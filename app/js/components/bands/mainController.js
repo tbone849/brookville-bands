@@ -1,10 +1,6 @@
 angular.module('myApp')
-	.controller('mainController', ['$location', '$anchorScroll', '$scope', function($location, $anchorScroll, $scope){
+	.controller('mainController', ['$location', '$scope', function($location, $scope){
 		$scope.navigateTo = function(newPath){
 			$location.path(newPath);
-		};
-		$scope.goToTop = function(){
-			$location.hash('top');
-			$anchorScroll();
 		};
 	}]);
