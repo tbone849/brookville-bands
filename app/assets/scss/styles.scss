@@ -146,6 +146,16 @@ header {
 	overflow: auto;
 }
 
+.twitter-container, .announcements {
+	display: inline-block;
+	vertical-align: top;
+	margin-top: 2em;
+}
+
+.twitter-container{
+	margin-right: 2em;
+}
+
 // footer styles 
 
 footer {
