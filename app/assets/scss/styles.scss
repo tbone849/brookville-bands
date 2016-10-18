@@ -152,6 +152,10 @@ header {
 	margin-top: 2em;
 }
 
+.announcements {
+	width: 600px;
+}
+
 .twitter-container{
 	margin-right: 2em;
 }
@@ -218,7 +222,7 @@ nav {
 // view styles
 
 .view-container {
-	min-height: 500px;
+	min-height: 800px;
 	width: 80%;
 	@media (max-width: 600px){
 		width: 100%;
@@ -332,4 +336,22 @@ nav {
 	@media (min-width: 800px){
 		display: none;
 	}
+}
+
+.media-title {
+	font-family: 'lane', arial;
+	border-bottom: 1px solid #737373;
+	margin-bottom: 2em;
+}
+
+.media-category {
+	margin-bottom: 2em;
+}
+
+.feature-photo {
+	width: 100%;
+}
+
+.announcement-heading {
+	font-size: 1.25em;
 }
