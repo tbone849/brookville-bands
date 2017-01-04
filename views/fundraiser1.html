@@ -2,8 +2,8 @@
 	<h2>Fundraiser</h2>
 </div>
 <div class='content'>
-	There are no fundraisers at this time.
-	<div class='fundraiser-container ng-hide' ng-repeat='fundraiser in fundraisers'>
+	<span ng-hide='fundraisers'>There are no fundraisers at this time.</span>
+	<div class='fundraiser-container' ng-repeat='fundraiser in fundraisers'>
 		<div class='fundraiser'>
 			<span class="fs-title display-block mb">{{fundraiser.name}}</span>
 			<div class="divider divider--dark spacy-divider"></div>
@@ -12,7 +12,7 @@
 				<span class="display-block fs-body-1 tc-black-2">{{detail.subitem}}</span>
 			</div>
 		</div>
-		<div class='docs'>
+		<div class='docs' ng-show='fundraiser.docs'>
 			<span class="fs-title display-block mb docs-title">Extra Forms</span>
 			<div class="divider divider--dark spacy-divider"></div>
 			<div ng-repeat='doc in fundraiser.docs'>
