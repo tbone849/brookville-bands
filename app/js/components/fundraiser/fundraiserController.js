@@ -30,9 +30,26 @@ angular.module('myApp')
 			// 	]
 			// }	
 			{
-				name: 'Tag Days',
+				name: 'Marianna Hoagie Sale',
 				details: [
-					{ item: 'Start Date', subitem: 'Saturday, April 16, 2016'},
+					{ item: 'Start Date', subitem: 'February 1, 2017'},
+					{ item: 'End Date', subitem: 'February 14, 2017'},
+					{ item: 'Info', subitem: 'More to come...'}
+				]
+			},
+			{
+				name: 'Pie & Stromboni Sale',
+				details: [
+					{ item: 'Start Date', subitem: 'March 20, 2017'},
+					{ item: 'End Date', subitem: 'March 31, 2017'},
+					{ item: 'Info', subitem: 'More to come...'}
+				]
+			},
+			{
+				name: 'Personalized Cookbook Sale',
+				details: [
+					{ item: 'Start Date', subitem: 'April 3, 2017'},
+					{ item: 'End Date', subitem: 'April 17, 2017'},
 					{ item: 'Info', subitem: 'More to come...'}
 				]
 			}
