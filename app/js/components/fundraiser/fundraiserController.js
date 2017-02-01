@@ -34,7 +34,22 @@ angular.module('myApp')
 				details: [
 					{ item: 'Start Date', subitem: 'February 1, 2017'},
 					{ item: 'End Date', subitem: 'February 14, 2017'},
-					{ item: 'Info', subitem: 'More to come...'}
+					{ item: 'Forms Due', subitem: 'February 15, 2017'},
+					{ item: 'Pick Up', subitem: 'March 1, 2017'},
+					{ item: 'Place', subitem: 'High School Cafeteria'},
+					{ item: 'Time', subitem: '4:30pm - 6:00pm'}
+				],
+				docs: [
+					{
+						name: 'Info Sheet',
+						url: './documents/marianna-info.pdf',
+						about: '(PDF 182kb)'
+					},
+					{
+						name: 'Order Form',
+						url: './documents/marianna-form.pdf',
+						about: '(PDF 290kb)'
+					}
 				]
 			},
 			{
