@@ -3,6 +3,10 @@
 </div>
 <div class='content'>
 	<img class='band-pic' ng-src='{{pic}}'>
+	<h2>About the {{header}}</h2>
 	<p ng-repeat='item in text'>{{item}}</p>
-
+	<div ng-show='dates'>
+		<h2>Dates</h2>
+		<p ng-repeat='date in dates'>{{date}}</p>
+	</div>
 </div>
