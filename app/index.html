@@ -23,9 +23,9 @@
 	<header>
 		<div class='header-content'>
 			<div id='header-text'>
-				<span class="fs-display-2 display-block">Brookville Jr/Sr High School Bands</span>
+				<span class="fs-display-2 display-block">Brookville Bands</span>
 				<div id='header-director'>
-					<span>Dr. Timothy F. Stevenson, Director of Bands</span>
+					<span>Brookville Area School District - Brookville, PA</span>
 				</div>
 				<img id='indian' src='./assets/img/indian.png'>
 				<div id='mottos'>
@@ -51,31 +51,40 @@
                 <a href='#/' class="dropdown-link">Home</a>
               </li>
               <li>
-                <a href='#/bands/jr_high_band' class="dropdown-link">Jr. High Band</a>
+                <a href='#/bands/sr_high_concert_band' class="dropdown-link">Sr. High Concert Band</a>
               </li>
               <li>
-                <a href='#/bands/sr_high_band' class="dropdown-link">Sr. High Band</a>
+                <a href='#/bands/jr_high_concert_band' class="dropdown-link">Jr. High Concert Band</a>
               </li>
               <li>
-                <a href='#/bands/marching_band' class="dropdown-link">Marching Band</a>
+                <a href='#/bands/blue_raider_marching_band' class="dropdown-link">Blue Raider Marching Band</a>
+              </li>
+              <li>
+                <a href='#/bands/jazz_band' class="dropdown-link">Jazz Band</a>
+              </li>
+              <li>
+                <a href='#/bands/elementary_band' class="dropdown-link">4th, 5th & 6th Grade Band</a>
+              </li>
+              <li>
+                <a href='#/bands/elementary_honors_band' class="dropdown-link">Elementary Honors Band</a>
+              </li>
+              <li>
+                <a href='#/bands/elementary_jazz_band' class="dropdown-link">Elementary Jazz Band</a>
               </li>
               <li>
                 <a href='#/calendar' class="dropdown-link">Calendar</a>
               </li>
               <li>
+                <a href='#/directors' class="dropdown-link">Directors</a>
+              </li>
+              <li>
                 <a href='#/media' class="dropdown-link">Media</a>
               </li>
               <li>
-                <a href='#/boosters' class="dropdown-link">Boosters</a>
-              </li>
-              <li>
-                <a href='#/fundraiser' class="dropdown-link">Fundraiser</a>
-              </li>
-              <li>
-                <a href='#/director' class="dropdown-link">Director</a>
-              </li>
-              <li>
                 <a href='#/contact' class="dropdown-link">Contact</a>
+              </li>
+              <li>
+                <a href='#/student_parent_info' class="dropdown-link">Student/Parent Info</a>
               </li>
           </ul>
       </lx-dropdown-menu>
@@ -94,9 +103,27 @@
       	</lx-dropdown-toggle>
       	<lx-dropdown-menu>
       	    <ul>
-      	        <li><a href='#/bands/jr_high_band' class="dropdown-link">Jr. High Band</a></li>
-      	        <li><a href='#/bands/sr_high_band' class="dropdown-link">Sr. High Band</a></li>
-      	        <li><a href='#/bands/marching_band' class="dropdown-link">Marching Band</a></li>
+      	        <li>
+                <a href='#/bands/sr_high_concert_band' class="dropdown-link">Sr. High Concert Band</a>
+              </li>
+              <li>
+                <a href='#/bands/jr_high_concert_band' class="dropdown-link">Jr. High Concert Band</a>
+              </li>
+              <li>
+                <a href='#/bands/blue_raider_marching_band' class="dropdown-link">Blue Raider Marching Band</a>
+              </li>
+              <li>
+                <a href='#/bands/jazz_band' class="dropdown-link">Jazz Band</a>
+              </li>
+              <li>
+                <a href='#/bands/elementary_band' class="dropdown-link">4th, 5th & 6th Grade Band</a>
+              </li>
+              <li>
+                <a href='#/bands/elementary_honors_band' class="dropdown-link">Elementary Honors Band</a>
+              </li>
+              <li>
+                <a href='#/bands/elementary_jazz_band' class="dropdown-link">Elementary Jazz Band</a>
+              </li>
       	    </ul>
       	</lx-dropdown-menu>
     	</lx-dropdown>
@@ -104,26 +131,24 @@
        		class="btn btn--m btn--flat" 
        		lx-ripple='amber-900'
        		ng-click='navigateTo("/calendar")'>Calendar</button>
+        <button 
+          class="btn btn--m btn--flat" 
+          lx-ripple='amber-900'
+          ng-click='navigateTo("/directors")'>Directors</button>
        <button 
        		class="btn btn--m btn--flat" 
        		lx-ripple='amber-900'
        		ng-click='navigateTo("/media")'>Media</button>
+        <button 
+          class="btn btn--m btn--flat" 
+          lx-ripple='amber-900'
+          ng-click='navigateTo("/contact")'>Contact</button>
        <button 
        		class="btn btn--m btn--flat" 
        		lx-ripple='amber-900'
-       		ng-click='navigateTo("/boosters")'>Boosters</button>
-       <button 
-       		class="btn btn--m btn--flat" 
-       		lx-ripple='amber-900'
-       		ng-click='navigateTo("/fundraiser")'>Fundraiser</button>
-       <button 
-       		class="btn btn--m btn--flat" 
-       		lx-ripple='amber-900'
-       		ng-click='navigateTo("/director")'>Director</button>
-       <button 
-       		class="btn btn--m btn--flat" 
-       		lx-ripple='amber-900'
-       		ng-click='navigateTo("/contact")'>Contact</button>
+       		ng-click='navigateTo("/student_parent_info")'>Student/Parent Info</button>
+       
+       
       </div>
     </nav>
 	<div class="view-container card" ng-view>

@@ -9,14 +9,11 @@ angular.module('myApp', ['lumx', 'ngRoute', 'smoothScroll'])
             templateUrl : 'views/calendar1.html'
         }).when('/media', {
             templateUrl : 'views/media1.html'
-        }).when('/boosters', {
-            templateUrl : 'views/boosters1.html'
         }).when('/contact', {
             templateUrl : 'views/contact1.html'
-        }).when('/director', {
+        }).when('/directors', {
             templateUrl : 'views/director1.html'
-        }).when('/fundraiser', {
-            templateUrl : 'views/fundraiser1.html',
-            controller : 'fundraiserController'
+        }).when('/student_parent_info', {
+            templateUrl : 'views/student_parent_info.html',
         });
 	}]);
