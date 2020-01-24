@@ -1,4 +1,4 @@
-/* ======================================================= 
+/* =======================================================
  * Auto Grid Responsive Gallery
  * By David Blanco
  *
@@ -132,10 +132,10 @@
         .addClass('grid-brick');
       return $bricks;
     },
-    
+
     // sets up widget
     _create : function( options ) {
-      
+
       this.options = $.extend( true, {}, $.Mason.settings, options );
       this.styleQueue = [];
 
@@ -161,7 +161,7 @@
         x: x ? parseInt( x, 10 ) : 0,
         y: y ? parseInt( y, 10 ) : 0
       };
-      
+
       this.isFluid = this.options.columnWidth && typeof this.options.columnWidth === 'function';
 
       // add grid class first time around
@@ -169,10 +169,10 @@
       setTimeout( function() {
         instance.element.addClass('grid');
       }, 0 );
-      
+
       // bind resize method
       if ( this.options.isResizable ) {
-        $(window).bind( 'smartresize.grid', function() { 
+        $(window).bind( 'smartresize.grid', function() {
           instance.resize();
         });
       }
@@ -182,7 +182,7 @@
       this.reloadItems();
 
     },
-  
+
     // _init fires when instance is first created
     // and when instance is triggered again -> $el.grid();
     _init : function( callback ) {
@@ -195,9 +195,9 @@
       // signature: $('#foo').bar({ cool:false });
       if ( $.isPlainObject( key ) ){
         this.options = $.extend(true, this.options, key);
-      } 
+      }
     },
-    
+
     // ====================== General Layout ======================
 
     // used on collection of atoms (should be filtered, and sorted before )
@@ -208,7 +208,7 @@
       for (var i=0, len = $bricks.length; i < len; i++) {
         this._placeBrick( $bricks[i] );
       }
-      
+
       // set the size of the container
       var containerSize = {};
       containerSize.height = Math.max.apply( Math, this.colYs );
@@ -282,10 +282,10 @@
       if ( callback ) {
         callback.call( $bricks );
       }
-      
+
       this.isLaidOut = true;
     },
-    
+
     // calculates number of columns
     // i.e. this.columnWidth = 200
     _getColumns : function() {
@@ -338,7 +338,7 @@
       // get the minimum Y value from the columns
       var minimumY = Math.min.apply( Math, groupY ),
           shortCol = 0;
-      
+
       // Find index of short column, the first from the left
       for (var i=0, len = groupY.length; i < len; i++) {
         if ( groupY[i] === minimumY ) {
@@ -363,8 +363,8 @@
       }
 
     },
-    
-    
+
+
     resize: function() {
       var prevColCount = this.cols;
       // get updated colCount
@@ -374,8 +374,8 @@
         this._reLayout();
       }
     },
-    
-    
+
+
     _reLayout : function( callback ) {
       // reset columns
       var i = this.cols;
@@ -386,20 +386,20 @@
       // apply layout logic to all bricks
       this.layout( this.$bricks, callback );
     },
-    
+
     // ====================== Convenience methods ======================
-    
+
     // goes through all children again and gets bricks in proper order
     reloadItems : function() {
       this.$bricks = this._getBricks( this.element.children() );
     },
-    
-    
+
+
     reload : function( callback ) {
       this.reloadItems();
       this._init( callback );
     },
-    
+
 
     // convienence method for working with Infinite Scroll
     appended : function( $content, isAnimatedFromBottom, callback ) {
@@ -415,20 +415,20 @@
         this._appended( $content, callback );
       }
     },
-    
+
     _appended : function( $content, callback ) {
       var $newBricks = this._getBricks( $content );
       // add new bricks to brick pool
       this.$bricks = this.$bricks.add( $newBricks );
       this.layout( $newBricks, callback );
     },
-    
+
     // removes elements from Grid widget
     remove : function( $content ) {
       this.$bricks = this.$bricks.not( $content );
       $content.remove();
     },
-    
+
     // destroys widget, returns elements and container back (close) to original style
     destroy : function() {
 
@@ -439,7 +439,7 @@
           this.style.top = '';
           this.style.left = '';
         });
-      
+
       // re-apply saved container styles
       var elemStyle = this.element[0].style;
       for ( var prop in this.originalStyle ) {
@@ -450,19 +450,19 @@
         .unbind('.grid')
         .removeClass('grid')
         .removeData('grid');
-      
+
       $(window).unbind('.grid');
 
     }
-    
+
   };
-  
+
 
   // =======================  Plugin bridge  ===============================
   // leverages data method to either create or return $.Mason constructor
   // A bit from jQuery UI
   //   https://github.com/jquery/jquery-ui/blob/master/ui/jquery.ui.widget.js
-  // A bit from jcarousel 
+  // A bit from jcarousel
   //   https://github.com/jsor/jcarousel/blob/master/lib/jquery.jcarousel.js
 
 
@@ -480,13 +480,13 @@
         if(options != undefined && options.lazyLoad != undefined){
             $.fn.grid.defaults.lazyLoad = options.lazyLoad;
         }
-        
+
         if(options == undefined){
           options = {};
         }
 
         options.isFitWidth = ops.isFitWidth;
-        options.isAnimated = ops.isAnimated; 
+        options.isAnimated = ops.isAnimated;
         options.itemSelector = '.gbox';
         options.gutterWidth = ops.horizontalSpaceBetweenThumbnails;
         /* *************************************** ADJUST THE WIDTH OF THE COLUMNS *************************************** */
@@ -519,28 +519,28 @@
 
         $container.find('div.gbox').css('margin-bottom', ops.verticalSpaceBetweenThumbnails);
 
-        var supports = (function() {  
-            var   div = document.createElement('div'),  
-              vendors = 'Khtml ms O Moz Webkit'.split(' '),  
-                  len = vendors.length;  
+        var supports = (function() {
+            var   div = document.createElement('div'),
+              vendors = 'Khtml ms O Moz Webkit'.split(' '),
+                  len = vendors.length;
 
-            return function(prop) {  
-              if ( prop in div.style ) return true;  
+            return function(prop) {
+              if ( prop in div.style ) return true;
 
-              prop = prop.replace(/^[a-z]/, function(val) {  
-                 return val.toUpperCase();  
-              });  
+              prop = prop.replace(/^[a-z]/, function(val) {
+                 return val.toUpperCase();
+              });
 
-              while(len--) {  
-                 if ( vendors[len] + prop in div.style ) {  
-                    // browser supports box-shadow. Do what you need.  
-                    // Or use a bang (!) to test if the browser doesn't.  
-                    return true;  
-                 }   
-              }  
-              return false;  
-            };  
-        })(); 
+              while(len--) {
+                 if ( vendors[len] + prop in div.style ) {
+                    // browser supports box-shadow. Do what you need.
+                    // Or use a bang (!) to test if the browser doesn't.
+                    return true;
+                 }
+              }
+              return false;
+            };
+        })();
 
         if ( !supports('transform') ) { //IF IT DOES NOT SUPPORT SCALE PROPERTY FOR IE8 for example
              $container.addClass('noSupportTransform');
@@ -551,9 +551,10 @@
 
         var rsJSON = null;
         var $directory = $container.data('directory');
+        console.log('directory', $directory);
         var $categoryNavBar = $('<ul class="category-navbar" />').hide().insertBefore($container);
         /* *************************************** BRING IMAGES TO THE PARTY *************************************** */
-        
+
         var getCurrentCategory = function(){
               var filter = $categoryNavBar.find('li[class=select]').data('category');
               return filter;
@@ -603,7 +604,7 @@
         };
 
         var makeBox = function(category, imgName, thumb){
-            
+
             var thumbFolder = 'thumbnails/';
             if(thumb == 'no'){
                 thumbFolder = '';
@@ -641,7 +642,7 @@
             var lastFirst     = '';
             if( ops.visibleCaption ){
                 classVisible = 'visible-caption';
-            }            
+            }
 
             var box ='<div class="gbox" data-category="'+category+'" '+url+'>'+
                           '<img src="'+$directory+'/'+categoryURL+thumbFolder+imgName+'" data-lightbox="'+$directory+'/'+categoryURL+imgName+'" />'+
@@ -654,7 +655,7 @@
                           '</div>'+
                       '</div>';
 
-            
+
 
             return box;
         };
@@ -667,7 +668,7 @@
                             .removeClass("gbox grid-brick")
                             .hide();
             }
-            
+
         }
 
 
@@ -678,7 +679,7 @@
 
             //ADD IT TO THE PARTY AND HIDE IT UNTIL IT LOAD
             $container.append( boxes.hide() );
-            
+
             $container.imagesLoaded(function(){
                 boxes.hide();
 
@@ -697,7 +698,7 @@
             });
         };
 
-        //CUSTOMIZATION --> 
+        //CUSTOMIZATION -->
         /**
          * Return an Object sorted by it's Key
          */
@@ -710,7 +711,7 @@
                     keys.push(obj[key].order.toLowerCase()+"-&$&$-"+key);
                 }
             }
-            
+
             // sort keys
             keys.sort();
             if( ops.imagesOrder == "byName" || ops.imagesOrder == "byDateReverse" ){
@@ -719,7 +720,7 @@
                 //Reverse order
                 keys.reverse();
             }
-            
+
             // create new array based on Sorted Keys
             jQuery.each(keys, function(i, key){
                 var index = key.split('-&$&$-');
@@ -734,11 +735,12 @@
             addLoading();
 
             //GET THE CATEGORY WITH THE MAXIUM NUMBER OF IMAGES
-            var max = 0; 
+            var max = 0;
+            console.log('rsJSON', rsJSON);
             for(var key in rsJSON){
                 var category = rsJSON[key];
                 var length = 0;
-                for (var img in category) { length++; } 
+                for (var img in category) { length++; }
 
                 if(length>max)max=length;
             }
@@ -754,11 +756,11 @@
                       category = rsJSON[key];
                       var keyTmp = key;
                       if(cont == 0){
-                          keyTmp = 'all';  
+                          keyTmp = 'all';
                       }
                       var cont2 = 0;
                       for (var img in category) {
-                          
+
                           if(cont2 == i){
                             //CUSTOMIZATION-->
                             collection.push({ 'category':keyTmp, 'image':img, 'thumb': category[img].thumb, 'order': category[img].order, 'categoryOriginal': key  });
@@ -776,7 +778,7 @@
                    var category = rsJSON[key];
                    var keyTmp = key;
                    if(cont == 0){
-                      keyTmp = 'all';  
+                      keyTmp = 'all';
                    }
                    for (var img in category) {
                       //CUSTOMIZATION-->
@@ -814,13 +816,13 @@
 
             //GET THE IMAGES FROM ALL FOLDERS
             var collection = new Array();
-            
+
             var cont = 0;
             for (var key in rsJSON) {
                var category = rsJSON[key];
                var keyTmp = key;
                if(cont == 0){
-                  keyTmp = 'all';  
+                  keyTmp = 'all';
                }
 
                if(keyTmp == currentCategory){
@@ -873,8 +875,8 @@
         /*if(ops.lazyLoad){
           $(window).scroll(function(){
             if(loadMore.closest('html').length){
-              if( ($(window).scrollTop() == ($(document).height() - $(window)[0].innerHeight)) && loadingScroll==false ){        
-                loadingScroll = true; 
+              if( ($(window).scrollTop() == ($(document).height() - $(window)[0].innerHeight)) && loadingScroll==false ){
+                loadingScroll = true;
                 loadTrigger();
               }
             }
@@ -882,10 +884,10 @@
         }*/
 
         if(ops.lazyLoad){
-            
+
             loadMore.waypoint(function(direction) {
               var $this = $container;
-              if( $this.hasClass('completeAddingImages') ){                  
+              if( $this.hasClass('completeAddingImages') ){
                   if(loadMore.hasClass('grid-loadMore')){
                       loadTrigger();
                       $this.removeClass('completeAddingImages');
@@ -897,7 +899,7 @@
               enabled: true,
               horizontal: false,
               offset: 'bottom-in-view',
-              triggerOnce: false,   
+              triggerOnce: false,
             });
 
         }
@@ -945,9 +947,9 @@
                                   el.show();
                               }else{
                                   el.show();
-                                  
+
                                   if(el.data('moving') == false){
-                                      el.animate(ops.hiddenStyle,0);  
+                                      el.animate(ops.hiddenStyle,0);
                                       el.animate(ops.visibleStyle, 400, function(){ el.addClass('noTransform'); });
                                   }else{
                                       el.animate(ops.visibleStyle, 0); //If is hidden and it is going to move make sure it is visible
@@ -957,7 +959,7 @@
                           }else{
                             el.animate(ops.visibleStyle,options.animOpts, function(){ el.addClass('noTransform'); });
                           }
-                    } 
+                    }
 
                 });
             }
@@ -967,19 +969,19 @@
                 boxesHide[i].each(function(){
                     var el = $(this).removeClass('noTransform');
                     if( el.is(':hidden') == false ){
-                        
+
                         el.addClass('box');
                         if ( $container.hasClass('noSupportTransform') ) { //IF IT DOES NOT SUPPORT SCALE PROPERTY FOR IE8 for example
                              el.hide();
-                             el.removeClass('box'); 
+                             el.removeClass('box');
                         }else{
-                            el.animate(ops.visibleStyle,0);  
+                            el.animate(ops.visibleStyle,0);
                             el.animate(ops.hiddenStyle, options.animOpts, function(){
                                 el.hide();
                                 el.removeClass('box');
                             });
                         }
-                        
+
                     }else{
                       //do nothing
                     }
@@ -988,20 +990,26 @@
 
         }
 
-
+        console.log('about to call getJSON');
         /* ************ BRING INFORMATION THROUGH JSON ********* */
-        $.getJSON("reader.php?directory="+$directory+'&categoriesOrder='+ops.categoriesOrder+'&imagesOrder='+ops.imagesOrder,function(data){ 
+        $.getJSON("reader.php?directory="+$directory+'&categoriesOrder='+ops.categoriesOrder+'&imagesOrder='+ops.imagesOrder,function(data){
             rsJSON = data;
+            console.log('data', data);
 
             if( jQuery.isArray( data['All'] ) ){
                 data['All'] = {};
             }
-            
+
             $categoryNavBar.css('display','none');
 
             makeNavBar();
 
             loadImages(ops.imagesToLoadStart);
+        })
+        .error(function(jqXHR, textStatus, errorThrown){
+          console.log("error " + textStatus);
+          console.log("incoming Text " + jqXHR.responseText);
+          console.log("errorThrown", errorThrown);
         });
 
 
@@ -1028,14 +1036,14 @@
 
             if(filter == 'all'){
                 var all = elem.children('div').addClass('gbox grid-brick');
-                if ( $container.hasClass('noSupportTransform') ) { 
+                if ( $container.hasClass('noSupportTransform') ) {
                     all.css({'top': 200, 'left': 200});
-                } 
+                }
                 boxesShow.push( all );
             }else{
                 var category = elem.children('div[data-category="'+filter+'"]').addClass('gbox grid-brick');
                 if(category[0] != undefined){
-                    if ( $container.hasClass('noSupportTransform') ) { 
+                    if ( $container.hasClass('noSupportTransform') ) {
                         category.css({'top': 200, 'left': 200});
                     }
                     boxesShow.push( category.stop() );
@@ -1045,7 +1053,7 @@
                 var hide     = elem.children('div').not('.gbox[data-category="'+filter+'"]').removeClass("gbox grid-brick");
 
                 boxesHide.push( hide );
-                            
+
             }
 
             $container.grid('reload');
@@ -1066,14 +1074,14 @@
 
         $container.on( 'mouseenter.hoverdir, mouseleave.hoverdir', 'div.gbox', function( event ) {
             if(!ops.caption)return;
-                
+
             var $el         = $(this),
                 evType      = event.type,
                 $hoverElem  = $el.find( 'div.image-caption' ),
                 direction   = _getDir( $el, { x : event.pageX, y : event.pageY } ),
                 cssPos    =   _getPosition( direction, $el );
-            
-            
+
+
             //ALIGNMENT
             var child = $hoverElem.children('div.aligment');
             if(child[0] == undefined){
@@ -1089,11 +1097,11 @@
                 }
 
                 $hoverElem.css( { "left" : cssPos.from, "top" : cssPos.to } );
-              
+
                 $hoverElem.stop().show().fadeTo(0, 1, function() {
                                                     $(this).stop().animate( { "top" : 0, "left" : 0 } , 200, "linear" );
                                                 } );
-                
+
             }
             else {
 
@@ -1102,7 +1110,7 @@
                     $hoverElem.fadeOut(300);
                     return;
                 }
-              
+
                 if(ops.captionType == 'grid-fade'){
                       $hoverElem.fadeOut(700);
                 }else{
@@ -1110,7 +1118,7 @@
                 }
 
             }
-                
+
         } );
 
         var _getDir = function( $el, coordinates ) {
@@ -1122,16 +1130,16 @@
                 /** gets the x value relative to the center of the DIV and "normalize" it **/
                 x = ( coordinates.x - $el.offset().left - ( w/2 )) * ( w > h ? ( h/w ) : 1 ),
                 y = ( coordinates.y - $el.offset().top  - ( h/2 )) * ( h > w ? ( w/h ) : 1 ),
-            
+
                 /** the angle and the direction from where the mouse came in/went out clockwise (TRBL=0123);**/
-                /** first calculate the angle of the point, 
+                /** first calculate the angle of the point,
                 add 180 deg to get rid of the negative values
                 divide by 90 to get the quadrant
                 add 3 and do a modulo by 4  to shift the quadrants to a proper clockwise TRBL (top/right/bottom/left) **/
                 direction = Math.round( ( ( ( Math.atan2(y, x) * (180 / Math.PI) ) + 180 ) / 90 ) + 3 )  % 4;
-            
+
             return direction;
-            
+
         };
 
         var _getPosition = function( direction, $el ) {
@@ -1139,27 +1147,27 @@
             switch( direction ) {
                 case 0:
                     // from top
-                    if ( !ops.reverse ) { 
-                            fromLeft = 0, fromTop = - $el.height() 
-                    }else {  
-                            fromLeft = 0, fromTop = - $el.height()  
+                    if ( !ops.reverse ) {
+                            fromLeft = 0, fromTop = - $el.height()
+                    }else {
+                            fromLeft = 0, fromTop = - $el.height()
                     }
                     break;
                 case 1:
                     // from right
-                    if ( !ops.reverse ) { 
+                    if ( !ops.reverse ) {
                             fromLeft = $el.width()  , fromTop = 0
-                    }else {  
-                            fromLeft = - $el.width() , fromTop = 0 
+                    }else {
+                            fromLeft = - $el.width() , fromTop = 0
                     }
                     break;
                 case 2:
                     // from bottom
-                    if ( !ops.reverse ) { 
-                            fromLeft = 0 , fromTop = $el.height() 
+                    if ( !ops.reverse ) {
+                            fromLeft = 0 , fromTop = $el.height()
                     }
-                    else {  
-                            fromLeft = 0, fromTop = - $el.height()  
+                    else {
+                            fromLeft = 0, fromTop = - $el.height()
                     }
                     break;
                 case 3:
@@ -1167,13 +1175,13 @@
                     if ( !ops.reverse ) {
                             fromLeft = -$el.width()  , fromTop = 0
                     }
-                    else {  
-                            fromLeft =  $el.width(), fromTop = 0 
+                    else {
+                            fromLeft =  $el.width(), fromTop = 0
                     }
                     break;
             };
             return { from : fromLeft, to: fromTop };
-        }; 
+        };
 
         /* *************************************** LIGHTBOX *************************************** */
         var $body           = $('body');
@@ -1184,7 +1192,7 @@
 
         var currentIndex    = 0;
         //Container with the black Background
-        var $lightbox       = $('<div class="autoGrid-lightbox" />').appendTo($body); 
+        var $lightbox       = $('<div class="autoGrid-lightbox" />').appendTo($body);
         //Navigation Bar
         var $lbnav          = $('<div class="autoGrid-nav" />').appendTo($lightbox);
 
@@ -1291,7 +1299,7 @@
             $lightboxTimer.css({'position': 'absolute', 'bottom':0}).animate( { width: '100%' }, ops.lightBoxPlayInterval, 'linear', function(){ stopTimer(); } );
         };
 
-        
+
 
         var playing = false;
         var closing = false;
@@ -1299,12 +1307,12 @@
         //Play slideshow
         var play = function(){
             vars.interval = setTimeout(function(){
-                next();   
+                next();
             }, ops.lightBoxPlayInterval);
 
             updateTimer();
         }
-        
+
         //WHEN THE LIGHTBOX FINISH TO LOAD AN IMAGE
         var finish = function(){
             if(playing && closing==false){
@@ -1316,7 +1324,7 @@
 
         var loadIframe = function(iframeUrl){
               var destination = $('<iframe src="'+iframeUrl+'" class="lightbox-iframe" width="100%" height="100%" frameborder="0" allowfullscreen></iframe>');
-              
+
               $lightbox.append(destination.hide());
 
               var jIframe = destination[0];
@@ -1360,7 +1368,7 @@
                 if(ops.lightBoxZoomAnim == false){
                   scale = 1;
                 }
-                
+
                 //GET THE SRC OF THE IMAGE THAT WILL BE SHOWN IN THE LIGHTBOX
                 var thumbnail = image;
                 var src = thumbnail.data('lightbox');
@@ -1399,9 +1407,9 @@
 
                 currentImage.onload = function() {
                     if(tmp!=currentImage)return;
-                    
+
                     clearLoader();
-                    
+
                     var div1 = $('<div class="lightbox-alignment"></div>').appendTo($lightbox);
                     var div2 = $('<div class="lightbox-alignment2"></div>').appendTo(div1);
                     div2.append($img.css('margin-top', -$lbnav.outerHeight(false)).hide().scale(scale));
@@ -1411,7 +1419,7 @@
                     },  {duration : ops.lightBoxSpeedFx , complete: function(){ finish(); } });
 
                     fixImage();
-                    
+
                 };
 
                 /*currentImage.onerror=function(){
@@ -1434,7 +1442,7 @@
             var $this = $(this);
 
             var url = $this.data('url');
-            
+
             urlToLinkForLightbox = '';
             if(url != undefined && ops.linkOnLightbox == true){
                 urlToLinkForLightbox = "http://"+url;
@@ -1461,7 +1469,7 @@
             $lbnav.animate({
                                 'margin-top': 0
                             }, ops.lightBoxSpeedFx);
-            
+
             //SHOW THE LIGHTBOX
             $lightbox.fadeIn(ops.lightBoxSpeedFx);
 
@@ -1532,7 +1540,7 @@
                   //$body.css('overflow', 'auto');
               }
 
-            
+
         };
 
         //Next Post
@@ -1555,7 +1563,7 @@
                     }
 
                     if(boxes.eq(cont).is(":visible")){
-                     currentIndex = cont;  
+                     currentIndex = cont;
                       break;
                     }
                 }
@@ -1594,7 +1602,7 @@
                     }
 
                     if(boxes.eq(cont).is(":visible")){
-                     currentIndex = cont;  
+                     currentIndex = cont;
                       break;
                     }
                 }
@@ -1614,9 +1622,9 @@
 
 
         //TRIGGER EVENTS
-        $navNext.on('click', function(){  
+        $navNext.on('click', function(){
             stopTimer();
-            stopInterval();    
+            stopInterval();
             next();
         });
 
@@ -1624,12 +1632,12 @@
             if( urlToLinkForLightbox == '' ){
                 stopTimer();
                 stopInterval();
-                next();  
+                next();
             }else{
                 location.href = urlToLinkForLightbox;
                 //window.open(urlToLinkForLightbox , '_blank');
             }
-            
+
         });
 
         $navPrev.on('click', function(){
@@ -1658,7 +1666,7 @@
                 next();
             }
             //esc keyCode
-            if (event.keyCode == 27) { 
+            if (event.keyCode == 27) {
                 close();
             }
         });
@@ -1684,7 +1692,7 @@
                 play();
             }
 
-            
+
 
         });
 
@@ -1724,7 +1732,7 @@
           instance.option( options || {} );
           instance._init();
         } else {
-          
+
           //=db
           db(this);
           //=End db
@@ -1766,11 +1774,11 @@
       lightBoxText: true, //If you wish to show the text in the lightbox
       lightboxPlayBtn: true, //Show the play button?
       lightBoxAutoPlay: false, //The first time you open the lightbox it start playing the images
-      lightBoxPlayInterval: 4000, //The interval in the auto play mode 
+      lightBoxPlayInterval: 4000, //The interval in the auto play mode
       lightBoxShowTimer: true, //If you wish to show the timer in auto play mode
       lightBoxStopPlayOnClose: false, //Stop the auto play mode when you close the lightbox?
 
-      videos:  {}, 
+      videos:  {},
       linkOnLightbox: false,
 
       hiddenStyle: { opacity: 0, scale: 0.001 },
