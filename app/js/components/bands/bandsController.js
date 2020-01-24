@@ -7,7 +7,7 @@ angular.module('myApp')
 				'The band also participates, annually, in the Pennsylvania Music Educators Association (PMEA) Music Performance Assessments (MPA).  This is a state rating system that assesses the quality of large music ensembles.  The Jr. High Band has consistently received Superior ratings at this event.'
 			];
 			$scope.header = 'Jr. High Concert Band';
-			$scope.pic = '../assets/img/jr_high.png';
+			$scope.pic = '/assets/img/jr_high.png';
 		} else if($routeParams.band === 'sr_high_concert_band'){
 			$scope.text = [
 				'The Brookville Sr. High Band is open to all students in grades 9-12 who study a wind or percussion instrument.  Sr. High ensembles include the Concert Band, Marching Band, and Jazz Band.  The Sr. High Concert Band actively performs throughout the year including the annual Holiday and spring concerts, as well as the annual Veteran’s Day and Memorial Day programs held in Brookville.',
@@ -37,7 +37,7 @@ angular.module('myApp')
 		} else if($routeParams.band === 'elementary_band'){
 			$scope.text = [
 				"The 4th grade band is also considered the beginning band group at Brookville area schools. Students are able to begin playing band instruments in 4th grade. All Band members have one group lesson per week. The entire group also gets to meet for one band rehearsal per week as well.  Students learn basic instrument technique during this first year and present a program for parents in May.",
-				"In the 5th grade band, student develop many abilities in ensemble playing.  The music becomes more challenging and students strive to become better.  Even though the 5th grade band rehearses separately, the band will perform concerts as a combined 5th and 6th grade band.  Typically students in 5th grade will play lower parts in the music, i.e. - clarinet notes below the break and also brass players will play in their lower range.  The 5th and 6th grade band performs both Christmas and Spring concerts.", 
+				"In the 5th grade band, student develop many abilities in ensemble playing.  The music becomes more challenging and students strive to become better.  Even though the 5th grade band rehearses separately, the band will perform concerts as a combined 5th and 6th grade band.  Typically students in 5th grade will play lower parts in the music, i.e. - clarinet notes below the break and also brass players will play in their lower range.  The 5th and 6th grade band performs both Christmas and Spring concerts.",
 				"The 6th grade band again combines with the 5th grade band students for the concerts. The band members are now in their third year of playing and have developed skills to propel them to the junior high band the following year.  As with any band group, the goal of the director is to prepare the students for the next level of playing. The 6th grade band members are also considered the leaders of the elementary bands at Hickory Grove elementary school. "
 			];
 			$scope.header = '4th, 5th, & 6th Grade Band';
