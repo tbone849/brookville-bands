@@ -7,7 +7,7 @@ angular.module('myApp')
 				'The band also participates, annually, in the Pennsylvania Music Educators Association (PMEA) Music Performance Assessments (MPA).  This is a state rating system that assesses the quality of large music ensembles.  The Jr. High Band has consistently received Superior ratings at this event.'
 			];
 			$scope.header = 'Jr. High Concert Band';
-			$scope.pic = '/assets/img/jr_high.png';
+			$scope.pic = './assets/img/jr_high.png';
 		} else if($routeParams.band === 'sr_high_concert_band'){
 			$scope.text = [
 				'The Brookville Sr. High Band is open to all students in grades 9-12 who study a wind or percussion instrument.  Sr. High ensembles include the Concert Band, Marching Band, and Jazz Band.  The Sr. High Concert Band actively performs throughout the year including the annual Holiday and spring concerts, as well as the annual Veteran’s Day and Memorial Day programs held in Brookville.',
